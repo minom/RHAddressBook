@@ -31,8 +31,12 @@
 #import <Foundation/Foundation.h>
 #import <AddressBook/AddressBook.h>
 
+#ifdef APPORTABLE
 //enable framework debug logging (by default, enabled if DEBUG is defined, change FALSE to TRUE to enable always)
+#define RH_AB_ENABLE_DEBUG_LOGGING  defined(DEBUG)
+#else
 #define RH_AB_ENABLE_DEBUG_LOGGING  ( defined(DEBUG) || FALSE )
+#endif
 
 @class RHRecord;
 @class RHSource;
